@@ -1,0 +1,58 @@
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Background iframe */
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;  /* Make sure the iframe stays in the background */
+}
+
+/* Bubble at the top */
+.bubble {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #00f7ff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 0 20px 5px rgba(0, 247, 255, 0.7);
+  text-shadow: 0 0 15px rgba(0, 247, 255, 0.8);
+  animation: glow 1.5s infinite alternate;
+}
+
+/* Glowing animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 247, 255, 0.7);
+    text-shadow: 0 0 15px rgba(0, 247, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(0, 247, 255, 1);
+    text-shadow: 0 0 30px rgba(0, 247, 255, 1);
+  }
+}
+
+/* Additional styling to make sure the text in the bubble is well aligned */
+.bubble span {
+  display: inline-block;
+  white-space: nowrap;
+}
