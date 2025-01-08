@@ -13,13 +13,13 @@ html, body {
 }
 
 /* Background iframe */
-iframe {
-  position: absolute;
+#background-container {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;  /* Make sure the iframe stays in the background */
+  z-index: -1;  /* Ensures the iframe stays behind other content */
 }
 
 /* Bubble at the top */
@@ -29,30 +29,37 @@ iframe {
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.5);
-  color: #00f7ff;
+  color: #1F51FF; /* Updated color */
   padding: 10px 20px;
   border-radius: 25px;
   font-size: 24px;
   font-weight: bold;
-  box-shadow: 0 0 20px 5px rgba(0, 247, 255, 0.7);
-  text-shadow: 0 0 15px rgba(0, 247, 255, 0.8);
-  animation: glow 1.5s infinite alternate;
+  box-shadow: 0 0 10px 5px rgba(31, 81, 255, 0.4); /* Subtle glow */
+  text-shadow: 0 0 8px rgba(31, 81, 255, 0.6); /* Subtle text glow */
+  animation: glow 2s infinite alternate;
 }
 
-/* Glowing animation */
+/* Subtle glowing animation */
 @keyframes glow {
   0% {
-    box-shadow: 0 0 10px rgba(0, 247, 255, 0.7);
-    text-shadow: 0 0 15px rgba(0, 247, 255, 0.8);
+    box-shadow: 0 0 10px rgba(31, 81, 255, 0.4);
+    text-shadow: 0 0 8px rgba(31, 81, 255, 0.6);
   }
   100% {
-    box-shadow: 0 0 30px rgba(0, 247, 255, 1);
-    text-shadow: 0 0 30px rgba(0, 247, 255, 1);
+    box-shadow: 0 0 20px rgba(31, 81, 255, 0.6);
+    text-shadow: 0 0 18px rgba(31, 81, 255, 0.8);
   }
 }
 
-/* Additional styling to make sure the text in the bubble is well aligned */
-.bubble span {
-  display: inline-block;
-  white-space: nowrap;
+/* Optional: Additional styling to make the content area look nicer */
+.container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding-top: 200px;
+}
+
+h1 {
+  font-size: 48px;
+  color: white;
 }
